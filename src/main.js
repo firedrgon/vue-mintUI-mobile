@@ -13,9 +13,13 @@ import store from './store'
 // 引入faskclick库，解决移动端300s延迟问题
 import fastClick from 'fastclick'
 
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+
 Vue.config.productionTip = false
 
 Vue.use(MintUI)
+Vue.use(ElementUI)
 fastClick.attach(document.body)
 
 import axios from "./assets/js/api";

@@ -39,8 +39,19 @@ module.exports = {
     }
   },
   module: {
+		loaders: [
+			{
+				test: /\.css$/,
+				loader: 'style-loader!css-loader'
+			},
+			{
+				test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
+				loader: 'file-loader'
+			}
+    ],
     rules: [
-      ...(config.dev.useEslint ? [createLintingRule()] : []),
+			//注释eslint 检查
+      // ...(config.dev.useEslint ? [createLintingRule()] : []),
       {
         test: /\.vue$/,
         loader: 'vue-loader',
@@ -74,7 +85,8 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
-      }
+      },
+
     ]
   },
   node: {
